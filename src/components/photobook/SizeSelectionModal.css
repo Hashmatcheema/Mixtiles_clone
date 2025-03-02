@@ -1,0 +1,137 @@
+/* src/components/photobook/SizeSelectionModal.css */
+.size-modal-overlay {
+  position: fixed;
+  bottom: 0; /* Stick to the bottom of the screen */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align modal to the bottom */
+  z-index: 2000;
+  height: 100px; /* Adjust modal height */
+  max-height: 100px;
+}
+
+.size-modal-content {
+  background-color: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: modalFadeIn 0.3s ease-out;
+  height: 470px;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.size-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.size-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.size-modal-header .done-button {
+  background: #e91e63;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 150px;
+}
+
+.size-preview-container {
+  padding: 0;
+  width: 100%;
+}
+
+.size-preview-image {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.size-preview-image video {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.size-options-container {
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+}
+
+.size-option {
+  flex: 1;
+  border: 2px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 15px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-option.selected {
+  border-color: #e91e63;
+  background-color: rgba(233, 30, 99, 0.05);
+}
+
+.size-dimensions {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.size-price {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Adding responsive styles */
+@media (max-width: 768px) {
+  .size-modal-content {
+    width: 95%;
+  }
+
+  .size-preview-image {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .size-options-container {
+    padding: 15px;
+  }
+
+  .size-option {
+    padding: 10px 5px;
+  }
+
+  .size-dimensions {
+    font-size: 14px;
+  }
+
+  .size-price {
+    font-size: 12px;
+  }
+}

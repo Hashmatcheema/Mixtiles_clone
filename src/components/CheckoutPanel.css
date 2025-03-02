@@ -1,0 +1,210 @@
+/* src/components/CheckoutPanel.css */
+.checkout-panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+  }
+  
+  .checkout-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 450px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 2000;
+    overflow-y: auto;
+  }
+  
+  .checkout-panel.open {
+    right: 0;
+  }
+  
+  .checkout-panel-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .checkout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .checkout-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+  
+  .close-button:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  .checkout-sections {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .checkout-section {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .checkout-action-item {
+    display: flex;
+    align-items: center;
+    color: #e91e63;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: transform 0.2s;
+  }
+  
+  .checkout-action-item:hover {
+    transform: translateX(5px);
+  }
+  
+  .action-icon {
+    margin-right: 15px;
+    font-size: 24px;
+  }
+  
+  .action-text {
+    font-size: 16px;
+  }
+  
+  .promo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .promo-tag {
+    display: flex;
+    align-items: center;
+  }
+  
+  .promo-icon {
+    margin-right: 15px;
+    font-size: 20px;
+  }
+  
+  .promo-text {
+    font-weight: 600;
+  }
+  
+  .change-button {
+    background: none;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .order-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+  }
+  
+  .item-name {
+    font-weight: 500;
+  }
+  
+  .item-price {
+    font-weight: 600;
+  }
+  
+  .fee-item {
+    background-color: rgba(0,0,0,0.02);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+  
+  .fee-explanation {
+    font-size: 13px;
+    color: #777;
+    max-width: 280px;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+  
+  .deal-notification {
+    display: flex;
+    align-items: center;
+    color: #e91e63;
+    font-size: 14px;
+    margin: 8px 0;
+    padding: 10px;
+    background-color: rgba(233, 30, 99, 0.05);
+    border-radius: 8px;
+  }
+  
+  .deal-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  
+  .summary-item.total {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .place-order-button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 100%;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
+  }
+  
+  .place-order-button:hover {
+    background-color: #d81b60;
+    box-shadow: 0 6px 16px rgba(233, 30, 99, 0.3);
+  }

@@ -1,0 +1,204 @@
+/* src/components/photobook/ImageEditorControls.css */
+.editor-controls-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 40 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .crop-control-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .crop-instruction {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .zoom-slider-container::before {
+    content: "-";
+    color: #666;
+  }
+  
+  .zoom-slider-container::after {
+    content: "+";
+    color: #666;
+  }
+  
+  .zoom-slider-container input[type="range"] {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .zoom-slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .zoom-slider-container input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .edit-buttons-section {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .edit-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+  }
+  
+  .replace-button {
+    background-color: #2196f3;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+  }
+  
+  .done-button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .done-button:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Add responsive styles */
+  @media (max-width: 768px) {
+    .editor-controls-container {
+      padding: 15px;
+    }
+    
+    .edit-button {
+      padding: 10px;
+      font-size: 13px;
+    }
+  }
+
+
+
+
+.zoom-slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .zoom-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s;
+  }
+  
+  .zoom-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .zoom-button:active {
+    background-color: #d0d0d0;
+  }
+  
+  .zoom-slider {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+  }
+  
+  .zoom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .zoom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Make sure image expanded from center in ImageEditor.css */
+  .image-editor img {
+    transform-origin: center center !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-out;
+  }

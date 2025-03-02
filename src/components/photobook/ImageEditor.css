@@ -1,0 +1,219 @@
+/* src/components/photobook/ImageEditor.css */
+.image-editor-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-editor-container.active {
+    outline: 2px solid #e91e63;
+  }
+  
+  .image-editor {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .image-editor img {
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-out;
+  }
+  
+  /* src/components/photobook/ImageEditorControls.css */
+  .editor-controls-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .crop-control-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .crop-instruction {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .zoom-slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .zoom-icon {
+    color: #666;
+    font-weight: bold;
+  }
+  
+  .zoom-slider {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+  }
+  
+  .zoom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .zoom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .edit-buttons-section {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+  }
+  
+  .replace-button {
+    background-color: #2196f3;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+  }
+  
+  .done-button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .done-button:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Additional updates to BookViewer.css */
+  .book-viewer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Make sure slider is fully responsive */
+  @media (max-width: 768px) {
+    .editor-controls-container {
+      padding: 15px;
+      margin: 15px auto;
+    }
+    
+    .edit-button {
+      padding: 10px;
+      font-size: 13px;
+    }
+  }
+
+
+
+
+
+  .image-editor-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-editor-container.active {
+    outline: 2px solid #e91e63;
+  }
+  
+  .image-editor {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  /* Critically important for center-based zooming */
+  .image-editor img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-out;
+  }
+  
+  /* Scale from center when zooming */
+  .image-editor img.zoomed {
+    width: calc(100% * var(--zoom-level, 1));
+    height: calc(100% * var(--zoom-level, 1));
+  }
