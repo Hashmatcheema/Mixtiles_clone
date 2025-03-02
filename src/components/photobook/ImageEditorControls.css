@@ -202,3 +202,218 @@
     object-fit: cover;
     transition: all 0.2s ease-out;
   }
+
+
+
+  /* src/components/photobook/ImageEditorControls.css */
+.editor-controls-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-out;
+    z-index: 100;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .crop-control-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .crop-instruction {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+  
+  .zoom-slider-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .zoom-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+  
+  .zoom-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .zoom-button:active {
+    background-color: #d0d0d0;
+  }
+  
+  .zoom-slider {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 2px;
+    outline: none;
+  }
+  
+  .zoom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .zoom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e91e63;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .edit-buttons-section {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+  
+  .replace-button {
+    background-color: #2196f3;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+  }
+  
+  .done-button {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+  
+  .done-button:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Tablet adaptations */
+  @media (max-width: 768px) {
+    .editor-controls-container {
+      padding: 16px;
+      gap: 12px;
+    }
+    
+    .zoom-button {
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+    }
+    
+    .edit-button {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    
+    .done-button {
+      padding: 10px 0;
+      font-size: 14px;
+    }
+  }
+  
+  /* Mobile adaptations */
+  @media (max-width: 480px) {
+    .editor-controls-container {
+      width: 95%;
+      padding: 12px;
+      gap: 10px;
+      margin: 10px auto;
+    }
+    
+    .zoom-button {
+      width: 28px;
+      height: 28px;
+      font-size: 14px;
+    }
+    
+    .zoom-slider-container {
+      gap: 8px;
+    }
+    
+    .edit-buttons-section {
+      gap: 8px;
+    }
+    
+    .edit-button {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+    
+    .button-icon {
+      margin-right: 4px;
+    }
+    
+    .done-button {
+      padding: 8px 0;
+      font-size: 14px;
+    }
+    
+    .crop-instruction {
+      font-size: 12px;
+    }
+  }
